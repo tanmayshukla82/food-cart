@@ -2,7 +2,9 @@ const express = require('express')
 const port = 4000;
 const app = express();
 const db = require('./db');
+const { env } = require('process');
 db();
+env.config();
 app.get('/',(req,res)=>{
     res.send('Hello Node');
 })

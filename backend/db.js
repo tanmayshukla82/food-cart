@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
-const mongoUrl =
-  "mongodb+srv://tanmayshukla82:my_project@cluster0.gldmgpw.mongodb.net/Food-Cart?retryWrites=true&w=majority";
+const mongoUrl = process.env.MONGO;
 const db = async()=>{
     await mongoose.connect(mongoUrl,{useNewUrlParser: true}).then(()=>{
         console.log("Connected to database")
